@@ -9,10 +9,12 @@ html {
     box-sizing: inherit;
   }
 
+
 .calculator {
     border : 1px solid #E1F2FE;
-    width :400px;
+    width :350px;
     border-radius: 5px;
+
   }
 
   .screen{
@@ -41,3 +43,13 @@ html {
       background-color:#E1F2FE
   }
   
+.calculator-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    
+  }
+
+  .equals{
+    grid-area: 2 / 4 / 6 / 5;
+    height: 100%;
+  }

@@ -1,3 +1,5 @@
+
+
 function add(a, b){
     {return a + b}
 }
@@ -35,3 +37,15 @@ function operator(operator, numa, numb) {
      }
 }
 
+function display (){
+    const button = document.querySelectorAll('button');
+    const userDisplay = document.querySelector(".screen");
+    button.forEach((button) =>{
+        button.addEventListener('click', event => {
+            const displayValue = event.target.value;
+            userDisplay.value = displayValue;
+        }
+        )}
+    )}
+
+display()
