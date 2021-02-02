@@ -37,15 +37,17 @@ function operator(operator, numa, numb) {
      }
 }
 
+
 function display (){
-    const button = document.querySelectorAll('button');
+    const button = document.querySelectorAll('.number');
     const userDisplay = document.querySelector(".screen");
     button.forEach((button) =>{
         button.addEventListener('click', event => {
             const displayValue = event.target.value;
             userDisplay.value = displayValue;
+            console.log(displayValue);
         }
         )}
     )}
-
 display()
+
