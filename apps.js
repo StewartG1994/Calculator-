@@ -1,4 +1,7 @@
-
+const button = document.querySelectorAll('.number');
+const userDisplay = document.querySelector(".screen");
+const clearBtn = document.querySelector('.clear');
+const decmialBtn = document.querySelector('.decimal');
 
 function add(a, b){
     {return a + b}
@@ -16,6 +19,7 @@ function divide (a,b)
 function times (a,b){
 {return a*b}
 }
+
 
 function operator(operator, numa, numb) {
      switch(operator){
@@ -37,17 +41,19 @@ function operator(operator, numa, numb) {
      }
 }
 
+button.forEach((button) =>
+button.addEventListener('click', ()=> displayTotal(button.innerHTML)));
+clearBtn.addEventListener('click', clear);
+decmialBtn.addEventListener('click', appendDecimal);
 
-function display (){
-    const button = document.querySelectorAll('.number');
-    const userDisplay = document.querySelector(".screen");
-    button.forEach((button) =>{
-        button.addEventListener('click', event => {
-            const displayValue = event.target.value;
-            userDisplay.value = displayValue;
-            console.log(displayValue);
-        }
-        )}
-    )}
-display()
+function displayTotal (number){
+userDisplay.value += number;
+}
 
+function clear (){
+    userDisplay.value = "";
+}
+
+function appendDecimal(){
+    userDisplay.value += ".";
+}
