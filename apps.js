@@ -81,10 +81,14 @@ function setOperator(operator){
    
      }
 
+
+     
 function calculate(){
     
     secondNum = parseInt(userDisplay.value);
-    userDisplay.value = operator(operatorSelection, firstNum, secondNum);
+    result = operator(operatorSelection, firstNum, secondNum);
+    userDisplay.value = result.toString().substr(0,16);
+    
     operatorSelection = "";
     console.log(operatorSelection,firstNum,secondNum);
 }
