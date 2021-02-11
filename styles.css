@@ -1,6 +1,8 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    height: 100%;
+    display: grid;
   }
   
   *, *::before, *::after {
@@ -14,7 +16,8 @@ html {
     border : 1px solid #E1F2FE;
     width :350px;
     border-radius: 5px;
-    
+    margin:auto;
+    margin-top: 100px;
 
   }
 

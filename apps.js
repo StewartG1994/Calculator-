@@ -7,36 +7,36 @@ const equalsBtn = document.querySelector('.equals');
 
 
 button.forEach((button) =>
-button.addEventListener('click', ()=> displayTotal(button.value)));
+button.addEventListener('click', ()=> displayTotal(button.innerHTML)));
 
 clearBtn.addEventListener('click', clear);
 
 decmialBtn.addEventListener('click', appendDecimal);
 
 functionBtn.forEach((button) => 
-button.addEventListener('click', () => setOperator(button.value)));
+button.addEventListener('click', () => setOperator(button.innerHTML)));
 
 equalsBtn.addEventListener('click', calculate)
 
-let firstNum = "";                     
-let secondNum = "";
+let firstNum = 0;                     
+let secondNum = 0;
 let operatorSelection = "";
 
 function add(a, b){
-    {return a + b}
+    return a + b
 }
 
 function subtract(a,b){
-    {return a - b}
+return a - b
 }
 
 function divide (a,b)
 {
-    {return a / b}
+return a / b
 }
 
 function times (a,b){
-{return a*b}
+return a*b
 }
 
 
@@ -73,21 +73,18 @@ function appendDecimal(){
     userDisplay.value += ".";
 }
 
-function setFirstNumber (number){
-    number = firstNum;
-    firstNum = userDisplay.value;
-}
 
 function setOperator(operator){
-    firstNum = userDisplay.value;
+    firstNum = parseInt(userDisplay.value);
     operatorSelection = operator;
-    console.log(operatorSelection);
-
+    clear()
+   
      }
 
 function calculate(){
-    secondNum = userDisplay.value;
+    
+    secondNum = parseInt(userDisplay.value);
     userDisplay.value = operator(operatorSelection, firstNum, secondNum);
+    operatorSelection = "";
     console.log(operatorSelection,firstNum,secondNum);
 }
-
