@@ -4,6 +4,7 @@ const clearBtn = document.querySelector('.clear');
 const decmialBtn = document.querySelector('.decimal');
 const functionBtn = document.querySelectorAll('.function');
 const equalsBtn = document.querySelector('.equals');
+const history = document.querySelector('.history');
 
 
 button.forEach((button) =>
@@ -68,6 +69,7 @@ function displayTotal(number) {
 
 function clear() {
   userDisplay.value = null;
+  
 }
 
 function appendDecimal() {
@@ -78,7 +80,9 @@ function setOperator(operator) {
   if (operatorSelection !== null)
     calculate()
   firstNum = parseFloat(userDisplay.value);
+  history.value = firstNum;
   operatorSelection = operator;
+  history.value = firstNum + operatorSelection;
   userDisplay.value = firstNum;
   clear();
 }
@@ -86,7 +90,9 @@ function setOperator(operator) {
 function calculate() {
   
   secondNum = parseFloat(userDisplay.value);
+  history.value = firstNum + operatorSelection + secondNum;
   result = operator(operatorSelection, firstNum, secondNum);
+  history.value = "";
   userDisplay.value = result.toString().substr(0,8);
   operatorSelection = null;
 } 
