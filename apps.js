@@ -78,17 +78,15 @@ function setOperator(operator){
     firstNum = parseInt(userDisplay.value);
     operatorSelection = operator;
     clear()
-   
      }
 
 
      
 function calculate(){
-    
+    for (i = 0; i < 100; i++)
     secondNum = parseInt(userDisplay.value);
     result = operator(operatorSelection, firstNum, secondNum);
     userDisplay.value = result.toString().substr(0,16);
-    
-    operatorSelection = "";
+    secondNum = parseInt(userDisplay.value);
     console.log(operatorSelection,firstNum,secondNum);
 }
