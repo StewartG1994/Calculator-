@@ -10,16 +10,30 @@ html {
     padding: 0;
     box-sizing: inherit;
   }
-
+  body{
+    background: linear-gradient(to right, #cb2d3e, #ef473a)
+  }
+  
 
 .calculator {
     border : 1px solid #E1F2FE;
+    background-color: white;
     width :350px;
     border-radius: 5px;
+    box-shadow: 1px 0px 28px 9px rgba(0,0,0,0.57);
     margin:auto;
     margin-top: 100px;
+    
 
   }
+
+.function:hover{
+  background-color: #a6bbff
+}
+
+.equals:hover{
+  background-color: #a6bbff;
+}
 
 
 .history{
