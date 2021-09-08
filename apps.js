@@ -14,14 +14,27 @@ let result = null;
 
 numberButton.forEach((numberButton) => numberButton.addEventListener('click', () => displayTotal(numberButton.value)))
 operatorButton.forEach((operatorButton) => operatorButton.addEventListener('click', executeCalc));
+equals.addEventListener('click', executeCalc)
 
-clearBtn.addEventListener('click', () => { userDisplay.value = null; history.value = null})
+clearBtn.addEventListener('click', clear)
 decmialBtn.addEventListener('click', appendDecimal)
 
 function add(a,b){return a +b};
 function subtract(a,b){return a-b};
 function divide (a,b){return a/b}
 function multiply (a,b){return a*b} 
+
+function clear (){
+firstNum = null;
+secondNum = null;
+operatorSelected =null;
+historyArray = null;
+result = null;
+userDisplay.value = null;
+history.value = null;
+}
+
+
 
 
 function calculate(operator, numberOne, numberTwo){
@@ -58,26 +71,26 @@ operatorButton.forEach((numberButton) =>
 );
 
 
-function getOperatorAndFirstNum(operatorButton){
+function getOperatorAndFirstNum(operatorButton,){
 
   if (operatorSelected == null){
-
+     
      firstNum = userDisplay.value;
      operatorSelected = operatorButton;
-     history.value = firstNum += operatorSelected;
-     userDisplay.value = '';
-     
-
+     history.value = userDisplay.value += operatorSelected;
+    userDisplay.value = ''; 
   }
-}
+  }
+
 
 function executeCalc(){
 
     if (operatorSelected !== null){
-    secondNum = userDisplay.value;
-    result = calculate(operatorSelected, firstNum,secondNum)
-    userDisplay.value = result;
+    let firstNumber = parseFloat(firstNum);
+    secondNum = parseFloat(userDisplay.value);
+    result = calculate(operatorSelected, firstNumber,secondNum)
+    resultDisplay = result.toString().substring(0,8);
+    userDisplay.value = resultDisplay;
     operatorSelected = null;
-  
-      }}
+   }}
 
