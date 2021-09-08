@@ -35,6 +35,10 @@ html {
   background-color: #a6bbff;
 }
 
+.clear:hover{
+  background:#ef473a;
+
+}
 
 .history{
   width: 100%;
@@ -72,7 +76,9 @@ html {
   }
 
   button:hover {
-      background-color:#E1F2FE
+      background-color:#E1F2FE;
+      border-radius: 25px;
+
   }
   
 .calculator-buttons{
